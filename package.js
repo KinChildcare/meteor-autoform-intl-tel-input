@@ -5,7 +5,7 @@ Package.describe({
 });
 
 Npm.depends({
-    'intl-tel-input': '6.0.6'
+    'intl-tel-input': '14.0.6'
 });
 
 Package.onUse(function(api) {
@@ -15,19 +15,22 @@ Package.onUse(function(api) {
     api.use([
         'underscore',
         'templating',
-        'aldeed:autoform@5.3.2'
+        'aldeed:autoform@5.8.1'
     ], 'client');
 
     // Files
     api.addFiles([
         // Lib
-        '.npm/package/node_modules/intl-tel-input/build/img/flags.png',
-        '.npm/package/node_modules/intl-tel-input/build/img/flags@2x.png',
-        '.npm/package/node_modules/intl-tel-input/build/css/intlTelInput.css',
-        '.npm/package/node_modules/intl-tel-input/build/js/intlTelInput.min.js',
-        '.npm/package/node_modules/intl-tel-input/lib/libphonenumber/build/utils.js',
+        'css/intlTelInput.css',
+        '.npm/package/node_modules/intl-tel-input/build/js/intlTelInput-jquery.js',
+        '.npm/package/node_modules/intl-tel-input/build/js/utils.js',
         // Input
         'autoform-intl-tel-input.html',
         'autoform-intl-tel-input.js'
+    ], 'client');
+
+    api.addAssets([
+        'img/flags.png',
+        'img/flags@2x.png',
     ], 'client');
 });
